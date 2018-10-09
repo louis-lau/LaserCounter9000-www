@@ -40,7 +40,8 @@ nav.fixed a {
 }
 
 #landing,
-#about {
+#about,
+#contact {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -67,6 +68,21 @@ nav.fixed a {
   width: 80%;
   max-width: 900px;
   margin: 22px auto;
+}
+
+#contact {
+  background: #000;
+  color: #fff;
+}
+
+#contact p {
+  margin-bottom: 50px;
+}
+
+.gmap_canvas {
+  width: 90%;
+  max-width: 900px;
+  height: 50vh;
 }
 
 .logo svg {
