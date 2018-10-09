@@ -2,6 +2,29 @@ body {
   font-family: Roboto, sans-serif;
 }
 
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+nav {
+  max-width: 900px;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+nav a {
+  text-align: center;
+  flex-grow: 1;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 30px 0;
+}
+
 #landing {
   background: url("/img/kroeg.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -11,69 +34,14 @@ body {
   width: 100vw;
   height: 100vh;
   text-align: center;
-  font-size: 30px;
+  font-size: 22px;
   color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-/* #landing:before {
-  animation: grain 8s steps(10) infinite;
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/paper-pattern.png");
-  content: "";
-  height: 300%;
-  left: -50%;
-  opacity: .3;
-  position: fixed;
-  top: -110%;
-  width: 300%;
-} */
-
 .logo svg {
   width: 80%;
   max-width: 900px;
-}
-
-@keyframes grain {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-
-  10% {
-    transform: translate(-5%, -10%);
-  }
-
-  20% {
-    transform: translate(-15%, 5%);
-  }
-
-  30% {
-    transform: translate(7%, -25%);
-  }
-
-  40% {
-    transform: translate(-5%, 25%);
-  }
-
-  50% {
-    transform: translate(-15%, 10%);
-  }
-
-  60% {
-    transform: translate(15%, 0%);
-  }
-
-  70% {
-    transform: translate(0%, 15%);
-  }
-
-  80% {
-    transform: translate(3%, 35%);
-  }
-
-  90% {
-    transform: translate(-10%, 10%);
-  }
 }
