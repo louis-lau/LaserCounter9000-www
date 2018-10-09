@@ -89,3 +89,24 @@ nav.fixed a {
   width: 80%;
   max-width: 900px;
 }
+
+.logo svg #laser-star {
+  transition: .1s all ease-in-out;
+  transform: scaleY(0);
+  transform-origin: center;
+}
+
+.logo svg #laser-line {
+  transition: .3s all ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.logo.laser-on svg #laser-star {
+  transition-delay: .3s;
+  transform: scaleY(1);
+}
+
+.logo.laser-on svg #laser-line {
+  transform: scaleX(1);
+}
