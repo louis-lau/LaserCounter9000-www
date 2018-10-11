@@ -53,7 +53,7 @@ nav.fixed a {
 
 #landing {
   color: #fff;
-  background: url("/img/kroeg.jpg") no-repeat center center fixed;
+  background: url("../img/kroeg.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
