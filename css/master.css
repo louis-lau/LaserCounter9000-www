@@ -99,8 +99,18 @@ nav.fixed a {
 }
 
 .demo-wrapper svg {
+  margin: auto;
   height: 50%;
   width: 50%;
+}
+
+.counter {
+  margin: auto;
+  width: 40%;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #human-inside,
@@ -134,14 +144,6 @@ nav.fixed a {
   transform: translate(60px, -38px) scale(0);
 }
 
-.counter {
-  width: 40%;
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .counter-number {
   font-size: 75px;
 }
@@ -170,4 +172,14 @@ nav.fixed a {
 
 .logo.laser-on svg #laser-line {
   transform: scaleX(1);
+}
+
+@media only screen and (max-width: 567px) {
+  .demo-wrapper {
+    flex-direction: column;
+  }
+
+  .demo-wrapper svg {
+    width: 75%;
+  }
 }
