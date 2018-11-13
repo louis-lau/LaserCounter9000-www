@@ -41,6 +41,7 @@ nav.fixed a {
 
 #landing,
 #about,
+#demo,
 #contact {
   width: 100vw;
   height: 100vh;
@@ -83,6 +84,66 @@ nav.fixed a {
   width: 90%;
   max-width: 900px;
   height: 50vh;
+}
+
+#demo {
+  justify-content: space-evenly;
+  max-width: 1070px;
+  margin: auto;
+}
+
+.demo-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.demo-wrapper svg {
+  height: 50%;
+  width: 50%;
+}
+
+#human-inside,
+#human-inside-stationary {
+  transform: translate(60px, -38px) scale(1);
+}
+
+#human-inside.move {
+  transition: .3s transform ease-in-out;
+  transform: translate(0);
+}
+
+#human-outside.move {
+  transition: .3s transform ease-in-out;
+  transform: translate(60px, -38px);
+}
+
+#human-outside-stationary,
+#human-inside-stationary {
+  transition: .3s transform ease-in-out;
+  transform-origin: 5px 100px 0;
+}
+
+#human-outside-stationary.hide {
+  transition: unset;
+  transform: scale(0);
+}
+
+#human-inside-stationary.hide {
+  transition: unset;
+  transform: translate(60px, -38px) scale(0);
+}
+
+.counter {
+  width: 40%;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.counter-number {
+  font-size: 75px;
 }
 
 .logo svg {

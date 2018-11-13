@@ -1,8 +1,16 @@
 const logo = document.querySelector(".logo");
 const laserLine = document.querySelector("#laser-line");
+const humanInside = document.querySelector("#human-inside");
+const humanInsideStationary = document.querySelector("#human-inside-stationary");
+const humanOutside = document.querySelector("#human-outside");
+const humanOutsideStationary = document.querySelector("#human-outside-stationary");
+const demoLaserLine1 = document.querySelector("#demo-laser-line-1");
+const demoLaserLine2 = document.querySelector("#demo-laser-line-2");
+const counterNumber = document.querySelector(".counter-number");
 const nav = document.querySelector("nav");
 // Store how much pixel from top nav is on page load
 let navOffset = nav.offsetTop;
+let peopleAmount = 1;
 
 window.addEventListener("resize", function(event) {
   // Recalculate nav offset on page resize
@@ -33,8 +41,36 @@ setTimeout(function() {
 
 // Turn laser off and on again when going over it with your mouse
 laserLine.addEventListener("mouseover", function(event) {
-    logo.classList.remove("laser-on");
+  logo.classList.remove("laser-on");
+  setTimeout(function() {
+    logo.classList.add("laser-on");
+  }, 1000);
+});
+
+humanInside.addEventListener("click", function(event) {
+  if (!peopleAmount <= 0) {
+    humanInside.classList.add('move');
+    humanInsideStationary.classList.add('hide');
     setTimeout(function() {
-      logo.classList.add("laser-on");
-    }, 1000);
+      humanInsideStationary.classList.remove('hide');
+      peopleAmount--;
+      counterNumber.textContent = peopleAmount
+    }, 50);
+    setTimeout(function() {
+      humanInside.classList.remove('move');
+    }, 300);
+  }
+});
+
+humanOutside.addEventListener("click", function(event) {
+  humanOutside.classList.add('move');
+  humanOutsideStationary.classList.add('hide');
+  setTimeout(function() {
+    humanOutsideStationary.classList.remove('hide');
+    peopleAmount++;
+    counterNumber.textContent = peopleAmount
+  }, 50)
+  setTimeout(function() {
+    humanOutside.classList.remove('move');
+  }, 300)
 });
