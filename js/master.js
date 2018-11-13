@@ -1,10 +1,10 @@
-var logo = document.getElementsByClassName("logo")[0];
-var laserLine = document.getElementById("laser-line");
-var nav = document.getElementsByTagName("nav")[0];
+const logo = document.querySelector(".logo");
+const laserLine = document.querySelector("#laser-line");
+const nav = document.querySelector("nav");
 // Store how much pixel from top nav is on page load
-var navOffset = nav.offsetTop;
+let navOffset = nav.offsetTop;
 
-window.onresize = function(){
+window.addEventListener("resize", function(event) {
   // Recalculate nav offset on page resize
   if (nav.classList.contains("fixed")) {
     nav.classList.remove("fixed");
@@ -14,9 +14,9 @@ window.onresize = function(){
   else {
     navOffset = nav.offsetTop;
   }
-};
+});
 
-window.onscroll = function() {
+window.addEventListener("scroll", function(event) {
   // Make nav sticky when scrolled to top of screen
   if (window.pageYOffset >= navOffset) {
     nav.classList.add("fixed");
@@ -24,7 +24,7 @@ window.onscroll = function() {
   else {
     nav.classList.remove("fixed");
   }
-};
+});
 
 // Turn on laser 500ms after page load. CSS is used to animate
 setTimeout(function() {
@@ -32,9 +32,9 @@ setTimeout(function() {
 }, 500);
 
 // Turn laser off and on again when going over it with your mouse
-laserLine.onmouseover = function(){
+laserLine.addEventListener("mouseover", function(event) {
     logo.classList.remove("laser-on");
     setTimeout(function() {
       logo.classList.add("laser-on");
     }, 1000);
-};
+});
